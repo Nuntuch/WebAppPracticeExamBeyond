@@ -86,7 +86,7 @@ public class CreateAccountServlet extends HttpServlet {
 //             getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
 /////////////////////////
             registerJpaCtrl.create(register);
-
+            request.setAttribute("path", getServletContext().getContextPath());
             getServletContext().getRequestDispatcher("/CreateSuccessfully.jsp").forward(request, response);
 
         } else {

@@ -19,5 +19,6 @@
             Enter Your Code here : <input type="text" name="key" required/>
             <input type="submit"/>
         </form>
+            ${error}
     </body>
 </html>

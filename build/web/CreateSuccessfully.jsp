@@ -15,6 +15,6 @@
         <h1>Ha Ha Ha CreateSuccessfully</h1>
         <br>
         <h1>Your Code is : ${key}</h1>
-        <a href="/Register.jsp">Go to Register EiEi</a>
+        <a href="${path}/Register.jsp">Go to Register EiEi</a>
     </body>
 </html>

@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class CreateSuccessfully_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,15 +48,19 @@ public final class CreateSuccessfully_jsp extends org.apache.jasper.runtime.Http
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
+      out.write("        <title>Register</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h1>Ha Ha Ha CreateSuccessfully</h1>\n");
-      out.write("        <br>\n");
-      out.write("        <h1>Your Code is : ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${key}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("</h1>\n");
-      out.write("        <a href=\"/Register.jsp\">Go to Register EiEi</a>\n");
+      out.write("        <h1>Register</h1>\n");
+      out.write("        \n");
+      out.write("        <form action=\"Register\" method=\"post\">\n");
+      out.write("            Enter Your Email : <input type=\"text\" name =\"email\" required/> \n");
+      out.write("            Enter Your Code here : <input type=\"text\" name=\"key\" required/>\n");
+      out.write("            <input type=\"submit\"/>\n");
+      out.write("        </form>\n");
+      out.write("            ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${error}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
