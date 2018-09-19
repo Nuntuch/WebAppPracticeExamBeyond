@@ -86,9 +86,9 @@ public class RegisterServlet extends HttpServlet {
 
                     return;
                 }
-            }
             request.setAttribute("Error", "You Key is Worng แนะนำให้copyมาแล้ววางใหม่ อิๆ");
             getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+            }
         }
             getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
 
