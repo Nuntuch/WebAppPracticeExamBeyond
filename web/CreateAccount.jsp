@@ -24,7 +24,7 @@
             <br>
             <input type="submit" name="Create Account"/>
         </form>
-
+        ${msg}
 
 
 

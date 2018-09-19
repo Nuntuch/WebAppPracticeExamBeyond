@@ -7,6 +7,7 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
@@ -54,18 +55,41 @@ public class CreateAccountServlet extends HttpServlet {
             Register register = new Register();
             register.setEmail(email);
             register.setPassword(password);
-            double key = Math.random()*((999999999-100000000)+1);
-            String keyS = key+"";
+            double key = Math.random() * ((999999999 - 100000000) + 1);
+            String keyS = key + "";
+
             register.setActivatekey(keyS);
             request.setAttribute("key", keyS);
-            
+
             RegisterJpaController registerJpaCtrl = new RegisterJpaController(utx, emf);
-            registerJpaCtrl.create(register);
-            
-            getServletContext().getRequestDispatcher("/CreateAccount.jsp").forward(request, response);
+
+            List<Register> registersList = registerJpaCtrl.findRegisterEntities();
+
+            for (Register register1 : registersList) {
+                if (register1.getEmail().equals(register.getEmail())) {
+                    String msg = register.getEmail() + " is Dupicate";
+                    request.setAttribute("msg", msg);
+                    getServletContext().getRequestDispatcher("/CreateAccount.jsp").forward(request, response);
+                    break;
+                }
+//                else {
+//                    registerJpaCtrl.create(register);
+//
+//                    getServletContext().getRequestDispatcher("/CreateSuccessfully.jsp").forward(request, response);
+//                    break;
+//                }
+
+            }
+
+            //////////////////////////////
 //             getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
-        }else{
-        response.sendRedirect(getServletContext()+"/CreateAccount.jsp");
+/////////////////////////
+            registerJpaCtrl.create(register);
+
+            getServletContext().getRequestDispatcher("/CreateSuccessfully.jsp").forward(request, response);
+         
+        } else {
+            response.sendRedirect(getServletContext().getContextPath() + "/CreateAccount.jsp");
         }
 
     }
