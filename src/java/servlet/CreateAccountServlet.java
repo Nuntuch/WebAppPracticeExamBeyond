@@ -49,7 +49,7 @@ public class CreateAccountServlet extends HttpServlet {
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-
+        
         if (email != null && email.trim().length() > 0
                 && password != null && password.trim().length() > 0) {
             Register register = new Register();
