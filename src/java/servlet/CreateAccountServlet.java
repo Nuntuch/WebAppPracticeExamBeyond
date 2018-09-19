@@ -70,7 +70,8 @@ public class CreateAccountServlet extends HttpServlet {
                     String msg = register.getEmail() + " is Dupicate";
                     request.setAttribute("msg", msg);
                     getServletContext().getRequestDispatcher("/CreateAccount.jsp").forward(request, response);
-                    break;
+//                    break;
+                    return;
                 }
 //                else {
 //                    registerJpaCtrl.create(register);
@@ -87,7 +88,7 @@ public class CreateAccountServlet extends HttpServlet {
             registerJpaCtrl.create(register);
 
             getServletContext().getRequestDispatcher("/CreateSuccessfully.jsp").forward(request, response);
-         
+
         } else {
             response.sendRedirect(getServletContext().getContextPath() + "/CreateAccount.jsp");
         }

@@ -12,9 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>CreateSuccessfully</h1>
+        <h1>Ha Ha Ha CreateSuccessfully</h1>
         <br>
         <h1>Your Code is : ${key}</h1>
-        
+        <a href="/Register.jsp">Go to Register EiEi</a>
     </body>
 </html>

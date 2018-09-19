@@ -13,5 +13,11 @@
     </head>
     <body>
         <h1>Register</h1>
+        
+        <form action="Register" method="post">
+            Enter Your Email : <input type="text" name ="email" required/> 
+            Enter Your Code here : <input type="text" name="key" required/>
+            <input type="submit"/>
+        </form>
     </body>
 </html>
