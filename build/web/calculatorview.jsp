@@ -13,16 +13,16 @@
     </head>
     <body>
     <center>  <h1>Calculator</h1> </center>
-    
-    
-<form action="Calculator" method="post">
-    X: <input type="number"  name="x" required=""/>
-    Y: <input type="number"  name="y" required=""/>
-    Oper: <input type="text"  name="oper" required=""/>
-        
+
+
+    <form action="Calculator" method="post">
+        X: <input type="number"  name="x" required=""/>
+        Y: <input type="number"  name="y" required=""/>
+        Oper: <input type="text"  name="oper" required=""/>
+
         <input type="submit" name="cat"/>
     </form>
-    <br>    
+    <br>      
     <hr>    
     <br>    
     <h2> x </h2>
@@ -32,11 +32,11 @@
     <h2>&nbsp&nbsp&nbsp</h2>
     <h2> y </h2> 
     ${calculator.y}
-    
-    
+
+
     <h2> ANS </h2>
-    
-   ${calculator.ans} 
-    
-    </body>
+
+    ${calculator.ans} 
+
+</body>
 </html>
