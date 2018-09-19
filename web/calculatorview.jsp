@@ -25,7 +25,16 @@
     <br>    
     <hr>    
     <br>    
-    <h2> ANS : </h2>
+    <h2> x </h2>
+    ${calculator.x}
+    <h2>&nbsp&nbsp&nbsp</h2>
+    ${calculator.oper}
+    <h2>&nbsp&nbsp&nbsp</h2>
+    <h2> y </h2> 
+    ${calculator.y}
+    
+    
+    <h2> ANS </h2>
     
    ${calculator.ans} 
     
