@@ -62,11 +62,12 @@ public class RegisterServlet extends HttpServlet {
 
         String key = request.getParameter("key");
         String email = request.getParameter("email");
-        if (key != null && key.trim().length() > 0) {
+        if (key != null && key.trim().length() > 0
+                && email != null && email.trim().length() > 0) {
             Register registerObj = new Register();
             registerObj.setEmail(email);
             registerObj.setEmail(key);
-
+//ได้ยินๆ 555+ ต่ออยู่55555 
             RegisterJpaController registerJpaCtrl = new RegisterJpaController(utx, emf);
 
             List<Register> registerJpaCtrlList = registerJpaCtrl.findRegisterEntities();
@@ -86,11 +87,11 @@ public class RegisterServlet extends HttpServlet {
 
                     return;
                 }
-            request.setAttribute("Error", "You Key is Worng แนะนำให้copyมาแล้ววางใหม่ อิๆ");
-            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+                request.setAttribute("Error", "You Key is Worng แนะนำให้copyมาแล้ววางใหม่ อิๆ");
+                getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
             }
         }
-            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
 
     }
 
